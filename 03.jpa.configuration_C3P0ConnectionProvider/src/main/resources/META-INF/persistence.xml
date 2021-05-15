@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="TestPersistence"
+		transaction-type="RESOURCE_LOCAL">
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/project" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="1234" />
+
+			<!--Dialect :Uygulamamızın veritabanı ile hangi veritabanı dilinde konuşacağı 
+				bilgisini gösterir. Örnek verirsek uygulama üzerinden MSSQL veritabanına 
+				bağlanıyorsak , MSSQL betikleri(script) kullanmamız gerekir . -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQLDialect" />
+
+			<!--Bu alttaki kod ile Veri Tabanı ile alışverişin thread yöntemi ile 
+				olacağını belirtiyoruz. -->
+			<property name="hibernate.current_session_context_class"
+				value="thread" />
+
+			<!--Tabloların her seferinde baştan mı oluşturulacağını yoksa sadece veri 
+				mi güncelleceneği belirtiyoruz. Eğer value'ye update yazsak sadece güncelleme 
+				işlerini yapardı. -->
+			<property name="hibernate.hbm2dll.auto" value="create" />
+
+			<!--Uygulama tarafından veritabanına gönderilen sql betiklerinin console 
+				ekranında gösterilmesini sağlar -->
+			<property name="hibernate.show_sql" value="true" />
+
+			<!--Sorgular sql formatında olsun.Eğer false yaparsak yada yazmazsak,sorgular 
+				hibernate formatında olur. -->
+			<property name="hibernate.format_sql" value="true" />
+			
+			
+			
+			<!-- C3P0 PROVİDER -->
+			<property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
+			<property name="hibernate.c3p0.min_size" value ="5"/>
+			<property name="hibernate.c3p0.max_size" value = "20"/>
+			<property name="hibernate.c3p0.acquire_increment" value="5"/>
+			<property name="hibernate.c3p0.timeout" value="600"/>
+			<property name="hibernate.c3p0.idle_test_period" value="1000"/>
+			<property name="hibernate.c3p0.max_statements" value="30"/>
+			
+			
+		</properties>
+	</persistence-unit>
+
+
+</persistence>

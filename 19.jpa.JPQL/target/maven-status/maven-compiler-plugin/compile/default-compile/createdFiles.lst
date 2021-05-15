@@ -1,0 +1,11 @@
+com\project\productRepositoryImp\ProductRepository.class
+com\project\jpafactoryImpl\JpaFactory.class
+com\project\queries\ProductQueries.class
+com\project\jpafactory\IJpaFactory.class
+com\project\main\Main.class
+com\project\productRepository\IProductRepository.class
+com\project\model\Product.class
+com\project\insertData\InsertData.class
+com\project\findData\FindData.class
+com\project\model\Category.class
+com\project\model\Brand.class
